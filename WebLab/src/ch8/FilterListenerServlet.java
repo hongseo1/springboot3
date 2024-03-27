@@ -1,4 +1,4 @@
-package ch5;
+package ch8;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,18 +8,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class QueryServlet
+ * Servlet implementation class FilterListenerServlet
  */
-@WebServlet("/QueryServlet")
-public class QueryServlet extends HttpServlet {
+@WebServlet("/FilterListenerServlet")
+public class FilterListenerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public QueryServlet() {
+    public FilterListenerServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,30 +29,29 @@ public class QueryServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("euc-kr");
 		response.setContentType("text/html;charset=EUC-KR");
-		
 		PrintWriter out = response.getWriter();
-		out.println("<h1>Query Test</h1>");
-		out.println("name : " +request.getParameter("name")+"<br/>");
-		out.println("password : " +request.getParameter("password")+"<br/>");
-		out.println("sex : " +request.getParameter("sex")+"<br/>");
-		out.println("관심사항 : ");
-		String favors[] = request.getParameterValues("favor");
-		for(String favor: favors) {
-			out.println(favor+", ");
-		}
-		out.println("<br/>");
-		out.println("job : "+request.getParameter("job")+"<br/>");
-		out.println("comments : "+request.getParameter("comments"));
+		
+		out.println("<form method='post' action='FilterListenerServlet'>");
+		out.println("name: <input type='text' name='id'/>");
+		out.println("<input type='submit'/>");
+		out.println("</form>");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setCharacterEncoding("euc-kr");
+		response.setContentType("text/html;charset=EUC-KR");
+		String id = request.getParameter("id");
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("id", new String(id));
+		
+		PrintWriter out = response.getWriter();
+		out.println(id+"으로 로그인 되었습니다.");
 	}
 
 }
