@@ -51,7 +51,7 @@ public class FilterListenerServlet extends HttpServlet {
 		session.setAttribute("id", new String(id));
 		
 		PrintWriter out = response.getWriter();
-		out.println(id+"À¸·Î ·Î±×ÀÎ µÇ¾ú½À´Ï´Ù.");
+		out.println(id+"ë¡œ ë¡œê·¸ì¸ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
 }

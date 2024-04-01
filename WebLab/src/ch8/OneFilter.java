@@ -12,7 +12,7 @@ import javax.servlet.annotation.WebFilter;
 /**
  * Servlet Filter implementation class OneFilter
  */
-@WebFilter("/*") // /* ¸ğµç °æ·Î¿¡¼­ »ç¿ëÇÒ ¼ö ÀÖµµ·Ï 
+@WebFilter("/one") // /* ëª¨ë“  ê²½ë¡œì—ì„œ ì‚¬ìš©í•  ìˆ˜ ìˆë„ë¡ 
 public class OneFilter implements Filter {
 
     /**
@@ -34,12 +34,12 @@ public class OneFilter implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		System.out.println("OneFilter before...");
-		String id = request.getParameter("id"); //parameter¸¦ filter¿¡¼­µµ »ç¿ëÇÒ ¼ö ÀÖ´Ù.
+		String id = request.getParameter("id"); //parameterë¥¼ filterì—ì„œë„ ì‚¬ìš©í•  ìˆ˜ ìˆë‹¤.
 		if(id != null) {
-			System.out.println(id+"·Î ·Î±×ÀÎÀÌ ½Ãµµ µÇ¾ú½À´Ï´Ù.");
+			System.out.println(id+"ë¡œ ë¡œê·¸ì¸ì´ ì‹œë„ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 
-		chain.doFilter(request, response); // ´ÙÀ½ ÇÊ´õ°¡ ÀÖ´Ù¸é Àü´Ş ¹ŞÀº request, response¸¦ µ¿ÀÏÇÏ°Ô Àü´Ş(¿¬°á)
+		chain.doFilter(request, response); // ë‹¤ìŒ í•„ë”ê°€ ìˆë‹¤ë©´ ì „ë‹¬ ë°›ì€ request, responseë¥¼ ë™ì¼í•˜ê²Œ ì „ë‹¬(ì—°ê²°)
 		System.out.println("OneFilter end...");
 	}
 
