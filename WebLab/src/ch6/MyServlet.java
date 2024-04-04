@@ -47,7 +47,7 @@ public class MyServlet extends HttpServlet {
 		out.println("param : "+param1+","+param2);
 	}
 
-	// °á·Ğ : web.xml ÆÄÀÏ¿¡ µî·Ï ¶Ç´Â AnnotationÀ¸·Î ServletÀ¸·Î µî·ÏÇØ »ç¿ë °¡´É.
+	//ê²°ë¡  : web.xml íŒŒì¼ì— ë“±ë¡ ë˜ëŠ” Annotationìœ¼ë¡œ Servletìœ¼ë¡œ ë“±ë¡í•´ ì‚¬ìš©ê°€ëŠ¥
 	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

@@ -33,15 +33,15 @@ public class OneServlet extends HttpServlet {
 		out.println("<h1>I am One Servlet</h1>");
 		
 		response.sendRedirect("TwoServlet");
-		//Ό³Έν: http://localhost:8090/WebLab/TwoServlet
+		//μ„¤λª…: http://localhost:8090/WebLab/TwoServlet
 		
 		//RequestDispatcher rd = request.getRequestDispatcher("TwoServlet");
 		//rd.forward(request, response);
-		//Ό³Έν: http://localhost:8090/WebLab/OneServlet
+		//μ„¤λª…: http://localhost:8090/WebLab/OneServlet
 		
 		//RequestDispatcher rd = request.getRequestDispatcher("TwoServlet");
 		//rd.include(request, response);
-		//Ό³Έν: http://localhost:8090/WebLab/OneServlet
+		//μ„¤λª…: http://localhost:8090/WebLab/OneServlet
 	}
 
 	/**

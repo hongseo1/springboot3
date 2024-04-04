@@ -199,7 +199,7 @@
 						<li class="fee_box last fl">
 							<a href="#" tabindex="141">
 								<p class="fee_box_tit">LTE 유심 스페셜</p>
-								<p class="fee_plus">11GB+일2GB <span>다쓰�� 최대 3Mbps</span></p>
+								<p class="fee_plus">11GB+일2GB <span>다쓰면 최대 3Mbps</span></p>
 								<div class="fee_basic">
 									<p>통화 <span>기본제공</span></p>
 									<p>문자 <span>기본제공</span></p>
@@ -275,7 +275,7 @@
 						<li class="fee_box last fl">
 							<a href="#" tabindex="141">
 								<p class="fee_box_tit">LTE 유심 스페셜</p>
-								<p class="fee_plus">11GB+일2GB <span>다쓰�� 최대 3Mbps</span></p>
+								<p class="fee_plus">11GB+일2GB <span>다쓰면 최대 3Mbps</span></p>
 								<div class="fee_basic">
 									<p>통화 <span>기본제공</span></p>
 									<p>문자 <span>기본제공</span></p>
@@ -313,7 +313,7 @@
 						<li class="fee_box last fl">
 							<a href="#" tabindex="141">
 								<p class="fee_box_tit">LTE 유심 스페셜</p>
-								<p class="fee_plus">11GB+일2GB <span>다쓰�� 최대 3Mbps</span></p>
+								<p class="fee_plus">11GB+일2GB <span>다쓰면 최대 3Mbps</span></p>
 								<div class="fee_basic">
 									<p>통화 <span>기본제공</span></p>
 									<p>문자 <span>기본제공</span></p>
@@ -351,7 +351,7 @@
 						<li class="fee_box last fl">
 							<a href="#" tabindex="141">
 								<p class="fee_box_tit">LTE 유심 스페셜</p>
-								<p class="fee_plus">11GB+일2GB <span>다쓰�� 최대 3Mbps</span></p>
+								<p class="fee_plus">11GB+일2GB <span>다쓰면 최대 3Mbps</span></p>
 								<div class="fee_basic">
 									<p>통화 <span>기본제공</span></p>
 									<p>문자 <span>기본제공</span></p>
@@ -389,7 +389,7 @@
 						<li class="fee_box last fl">
 							<a href="#" tabindex="141">
 								<p class="fee_box_tit">LTE 유심 스페셜</p>
-								<p class="fee_plus">11GB+일2GB <span>다쓰�� 최대 3Mbps</span></p>
+								<p class="fee_plus">11GB+일2GB <span>다쓰면 최대 3Mbps</span></p>
 								<div class="fee_basic">
 									<p>통화 <span>기본제공</span></p>
 									<p>문자 <span>기본제공</span></p>
