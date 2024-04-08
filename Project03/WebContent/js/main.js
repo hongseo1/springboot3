@@ -55,7 +55,7 @@ function dday_count(){
 }
 
 $(function(){
-	$('.pop_wrap').hide();
+	//$('.pop_wrap').hide();
 	/* pop */
 	var pop_all_close = $('#pop .pop_all_close');
 	var pop_close = $('.pop_close_wrap .pop_close');
@@ -100,7 +100,7 @@ $(function(){
 		}
 	}
 
-	//window.open('popup.html', "", "width=440, height=596");
+	window.open('popup.html', "", "width=440, height=596");
 
 	/*banner*/
 	var banner_bg = $('.banner_bg_list li');
@@ -183,6 +183,7 @@ $(function(){
 		function(){
 			service_wrap.stop(true,true).animate({width:'10%', right:0},{duration:500, queue:false, easeing:'easeOutCubic'});
 			$(this).find('.event_tit').stop(true,true).animate({width:'26%', left:0},{duration:500, queue:false, easeing:'easeOutCubic'});
+			$(this).find('.event_box_bg').stop(true,true).hide(500);
 			$(this).stop(true,true).animate({width:'90%', left:0},{duration:500, queue:false, easeing:'easeOutCubic'});
 			$(this).find('.event_box_wrap').stop(true,true).animate({width:'100%', left:0},{duration:500, queue:false, easeing:'easeOutCubic'});
 			$('.service_tit').stop(true,true).hide(500);
@@ -191,6 +192,7 @@ $(function(){
 		function(){
 			service_wrap.stop(true,true).animate({width:'705px', right:0},{duration:500, queue:false, easeing:'easeOutCubic'});
 			$(this).find('.event_tit').stop(true,true).animate({width:'655px', left:0},{duration:500, queue:false, easeing:'easeOutCubic'});
+			$(this).find('.event_box_bg').stop(true,true).show(500);
 			$(this).stop(true,true).animate({width:'705px', left:0},{duration:500, queue:false, easeing:'easeOutCubic'});
 			$(this).find('.event_box_wrap').stop(true,true).animate({width:'100%', left:0},{duration:500, queue:false, easeing:'easeOutCubic'});
 			$('.service_tit').stop(true,true).show(500);
@@ -201,6 +203,7 @@ $(function(){
 		function(){
 			evnt_wrap.stop(true,true).animate({width:'10%', right:0},{duration:500, queue:false, easeing:'easeOutCubic'});
 			$(this).find('.service_tit').stop(true,true).animate({width:'26%', right:0},{duration:500, queue:false, easeing:'easeOutCubic'});
+			$(this).find('.service_box_bg').stop(true,true).hide(500);
 			$(this).stop(true,true).animate({width:'90%', left:0},{duration:500, queue:false, easeing:'easeOutCubic'});
 			$(this).find('.service_box_wrap').stop(true,true).animate({width:'100%', left:0},{duration:500, queue:false, easeing:'easeOutCubic'});
 			$('.event_tit').stop(true,true).hide(500);
@@ -209,6 +212,7 @@ $(function(){
 		function(){
 			evnt_wrap.stop(true,true).animate({width:'705px', right:0},{duration:500, queue:false, easeing:'easeOutCubic'});
 			$(this).find('.service_tit').stop(true,true).animate({width:'655px', right:0},{duration:500, queue:false, easeing:'easeOutCubic'});
+			$(this).find('.service_box_bg').stop(true,true).show(500);
 			$(this).stop(true,true).animate({width:'705px', left:0},{duration:500, queue:false, easeing:'easeOutCubic'});
 			$(this).find('.service_box_wrap').stop(true,true).animate({width:'100%', left:0},{duration:500, queue:false, easeing:'easeOutCubic'});
 			$('.event_tit').stop(true,true).show(500);
@@ -231,6 +235,55 @@ $(function(){
 
 		bast_conts.hide();
 		bast_conts.eq(i).show();
+	});
+
+	var swiper = new Swiper(".fee_list01", { 
+		slidesPerView: 2,
+		spaceBetween: 20,
+		navigation: {
+			nextEl: ".fee01 .swiper-button-next",
+			prevEl: ".fee01 .swiper-button-prev",
+		},
+	});
+	var swiper = new Swiper(".fee_list02", { 
+		slidesPerView: 2,
+		spaceBetween: 20,
+		navigation: {
+			nextEl: ".fee02 .swiper-button-next",
+			prevEl: ".fee02 .swiper-button-prev",
+		},
+	});
+	var swiper = new Swiper(".fee_list03", { 
+		slidesPerView: 2,
+		spaceBetween: 20,
+		navigation: {
+			nextEl: ".fee03 .swiper-button-next",
+			prevEl: ".fee03 .swiper-button-prev",
+		},
+	});
+	var swiper = new Swiper(".fee_list04", { 
+		slidesPerView: 2,
+		spaceBetween: 20,
+		navigation: {
+			nextEl: ".fee04 .swiper-button-next",
+			prevEl: ".fee04 .swiper-button-prev",
+		},
+	});
+	var swiper = new Swiper(".fee_list05", { 
+		slidesPerView: 2,
+		spaceBetween: 20,
+		navigation: {
+			nextEl: ".fee05 .swiper-button-next",
+			prevEl: ".fee05 .swiper-button-prev",
+		},
+	});
+	var swiper = new Swiper(".fee_list06", { 
+		slidesPerView: 2,
+		spaceBetween: 20,
+		navigation: {
+			nextEl: ".fee06 .swiper-button-next",
+			prevEl: ".fee06 .swiper-button-prev",
+		},
 	});
    
     /*phone_join tab*/
@@ -308,9 +361,11 @@ $(function(){
 		$('.w_icon').append('<img src="http://openweathermap.org/img/wn/'+$w_icon+'.png"/>');
 		$('.w_city').append('안양시');
 		
-		if(hour<=12){//오전
+		if(hour>=4&&hour<=12){//오전
 			$('.weather_bn').css("background-image","url(images/weacher_am.png)");
-		} else if(hour>18 ){//오후
+		} else if(hour>=18){//오후
+			$('.weather_bn').css("background-image","url(images/weacher_pm.jpg)").css('background-position-y', '-15px');
+		} else if(hour<4){//오후
 			$('.weather_bn').css("background-image","url(images/weacher_pm.jpg)").css('background-position-y', '-15px');
 		} else{
 			$('.weather_bn').css("background-image","url(images/weacher_am_pm.png)").css('background-position-y', '-80px');

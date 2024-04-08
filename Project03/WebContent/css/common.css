@@ -23,16 +23,17 @@ h1 span{display: none;}
 .quick_menu_wrap{position: absolute; top: 150px; right: -180px; z-index: 50;}
 .quick_menu_wrap a{display: block; color: #333333; font-size: 14px; text-align: center;}
 .quick_menu_wrap img{display: block; width: 30px; margin: 0 auto 10px; }
-.q_menu_list{width: 100px; /* padding-bottom: 10; */ background: #fdfdfd; border: 1px solid #dddddd; border-radius: 20px;}
+.q_menu_list{width: 100px; padding: 2px 0;/* padding-bottom: 10; */ background: #fdfdfd; border: 1px solid #dddddd; border-radius: 20px;}
 .q_menu_list li{height: 63px; padding: 20px 10px;}
 .q_menu_list li.q_menu_border{border-top: 1px solid #dddddd; border-bottom: 1px solid #dddddd;}
+.q_menu_list li a{font-size: 1em; font-weight: 500; letter-spacing: -0.6px;}
 .q_menu_list li a span{display: block; width: 80px; height: 34px; margin-bottom: 10px; background: url(../images/quick_icons.png) no-repeat center top; background-size: 40px;}
 .q_menu_list li.heart_icon a span{background-position: center -35px;}
 .q_menu_list li.qa_icon a span{background-position: center -69px;}
 .q_menu_list li.download_icon a span{background-position: center -104px;}
 .q_menu_list li.robotic_icon a span{background-position: center -139px;}
 
-.quick_menu_wrap .quick_txt{height: 82px; padding: 20px 10px 28px 10px; background: #fdfdfd; border: 1px solid #dddddd; border-radius: 20px; display: none;}
+.quick_menu_wrap .quick_txt{padding: 20px 10px 28px 10px; background: #fdfdfd; border: 1px solid #dddddd; border-radius: 20px; display: none;}
 .quick_menu_wrap .q_toggle{position: absolute; bottom: -20px; left: 50%; z-index: 53; width: 40px; height: 40px; margin-left: -20px; background: url(../images/quick_up_bk02.png) no-repeat; background-size: 40px; cursor: pointer;}
 
 .top_btn{position: fixed; bottom: 50px; right: 50px;}

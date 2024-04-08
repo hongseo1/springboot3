@@ -7,8 +7,12 @@
 	<title>LG U+ 유모바일</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 	<meta name="Generator" content="Notepad++">
+	<meta name="Author" content="홍서원">
+	<meta name="Keywords" content="유플러스, 유모바일, 프로젝트, 학생 포트폴리오, project">
+	<meta name="Description" content="유플러스 모바일 유모바일 홈페이지입니다." >
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="images/uplus_favicon.png" type="image/png">
+	<link rel="stylesheet" href="css/swiper.css">
 	<link rel="stylesheet" type="text/css" href="css/common.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
 	<!--[if lte ie 8]>
@@ -19,12 +23,13 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/jquery-1.9.0.min.js"></script>
 	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script src="js/swiper.js"></script>
 	<script src="js/common.js"></script>
 	<script src="js/main.js"></script>
 </head>
 <body onLoad="dday_count()">
-	<%@ include file="./include/quick_menu.jsp" %>
-	<%@ include file="./include/header.jsp" %>
+	<%@ include file="include/quick_menu.jsp" %>
+	<%@ include file="include/header.jsp" %>
 	<section class="banner_wrap bg_width margin_bt">
 		<h2>메인 배너</h2>
 		<div id="main_banner" class="cont_width">
@@ -57,12 +62,13 @@
 	</section><!--banner_wrap-->
 	<section id="main_event_service" class="cont_width margin_bt">
 		<div class="event_and_service cf">
-			<div class="event_wrap fl">
+			<div class="event_wrap fl" title="유모바일 이벤트">
 				<div class="cf">
 					<div class="event_tit fl">
 						<h2>유모바일만의 <br> 이벤트 혜택</h2>
 						<p>유모바일만의 이벤트 혜택을 경험해 보세요!</p>
 						<a href="#" class="moer_btn" tabindex="139">자세히보기</a>
+						<div class="event_box_bg"><img src="images/event_bg.png" alt=""></div>
 					</div>
 					<div class="event_tit_off fl">
 						<h2>이벤트 혜택</h2>
@@ -70,26 +76,63 @@
 					<div class="event_box_wrap fr">
 						<div class="event_box">
 							<ul class="event_list cf">
-								<li class="fl"><a href="#">이벤트1</a></li>
-								<li class="border fl"><a href="#">이벤트2</a></li>
-								<li class="fr"><a href="#">이벤트3</a></li>
+								<li class="fl">
+									<a href="#">
+										<div class="event_img img01"></div>
+										<div class="event_sub_tit">1만원대 평생 무제한 <span class="price">월 16,400원</span><span class="sub_tit">통화 무제한, 문자 기본제공</span></div>
+									</a>
+								</li>
+								<li class="border fl">
+									<a href="#">
+										<div class="event_img img02"></div>
+										<div class="event_sub_tit">eSIM 초저가 요금제! <span class="price">월 2,700원</span><span class="sub_tit">데이터 월 500MB 통화 60분, 문자 50건</span></div>
+									</a>
+								</li>
+								<li class="fl">
+									<a href="#">
+										<div class="event_img img03"></div>
+										<div class="event_sub_tit">친구에게 유모바일 추천해주세요.<span class="sub_tit">추천 친구 가입 시 1만 + 추가포인트</span></div>
+									</a>
+								</li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="point_service_wrap fr">
+			<div class="point_service_wrap fr" title="유모바일 구독서비스">
 				<div class="cf">
 					<div class="service_tit fr">
 						<h2>유모바일만의 <br> 구독 서비스</h2>
 						<p>유모바일만의 구독 서비스를 경험해 보세요!</p>
 						<a href="#" class="moer_btn" tabindex="139">자세히보기</a>
+						<div class="service_box_bg"><img src="images/service_bg.png" alt=""></div>
 					</div>
 					<div class="service_tit_off fl">
 						<h2>구독 서비스</h2>
 					</div>
-					<div class="service_box_wrap fl">
-						<div class="service_box">서비스내용</div>
+					<div class="service_box_wrap fr">
+						<div class="service_box">
+							<ul class="service_list cf">
+								<li class="fl">
+									<a href="#">
+										<div class="service_img img01"></div>
+										<div class="service_sub_tit">네이버 MY BOX <span class="price">월 3,300원</span><span class="sub_tit">180GB+매월 10% 적립</span></div>
+									</a>
+								</li>
+								<li class="border fl">
+									<a href="#">
+										<div class="service_img img02"></div>
+										<div class="service_sub_tit">밀리의 서재 <span class="price">월 9,900원</span><span class="sub_tit">매월 10% 적립+첫월 90% 추가 적립</span></div>
+									</a>
+								</li>
+								<li class="fl">
+									<a href="#">
+										<div class="service_img img03"></div>
+										<div class="service_sub_tit">지니 <span class="price">월 8,140원</span><span class="sub_tit">매월 10% 적립+10% 추가 적립</span></div>
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -175,233 +218,419 @@
 				<a href="#" class="moer_btn fr" tabindex="138">요금제 전체보기</a>
 			</div><!--fee_tab_menu-->
 			<div class="fee_list_wrap cf">
-				<div class="fee_box_wrap">
+				<div class="fee_box_wrap fee01">
 					<div class="sec_title fee_cont_tit fee_tit_bg01 fl">
 						<h2>BEST <br> 유심요금제</h2>
 						<p>1만원 이상 <br> 요금제 가입 시 <br> 3만원 혜택</p>
 						<a href="#" class="moer_btn" tabindex="139">자세히보기</a>
 					</div>
-					<ul class="fee_list">
-						<li class="fee_box fl">
-							<a href="#" tabindex="140">
-								<p class="fee_box_tit">LTE 유심 스페셜 플러스</p>
-								<p class="fee_plus">100GB <span>다쓰면 최대 5Mbps</span></p>
-								<div class="fee_basic">
-									<p>통화 <span>기본제공</span></p>
-									<p>문자 <span>기본제공</span></p>
-								</div>
-								<div class="fee_tip_text">
-									추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
-								</div>
-								<p class="fee_price"><strong>월 38,990원</strong><span>월 46,000원</span></p>
-							</a>
-						</li>
-						<li class="fee_box last fl">
-							<a href="#" tabindex="141">
-								<p class="fee_box_tit">LTE 유심 스페셜</p>
-								<p class="fee_plus">11GB+일2GB <span>다쓰면 최대 3Mbps</span></p>
-								<div class="fee_basic">
-									<p>통화 <span>기본제공</span></p>
-									<p>문자 <span>기본제공</span></p>
-								</div>
-								<div class="fee_tip_text">
-									추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
-								</div>
-								<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
-							</a>
-						</li>
-					</ul>
-					<div class="next_btn"></div>
+					<div class="swiper fee_list01">
+						<ul class="fee_list swiper-wrapper">
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="140">
+									<p class="fee_box_tit">LTE 유심 스페셜 플러스</p>
+									<p class="fee_plus">100GB <span>다쓰면 최대 5Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 38,990원</strong><span>월 46,000원</span></p>
+								</a>
+							</li>
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+							<li class="fee_box last fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="swiper-button-prev prev_btn" onclick="return false"></div>
+					<div class="swiper-button-next next_btn" onclick="return false"></div>
 				</div>
-				<div class="fee_box_wrap">
+				<div class="fee_box_wrap fee02">
 					<div class="sec_title fee_cont_tit fee_tit_bg02 fl">
 						<h2>1만원대<br> 데이터 무제한</h2>
 						<p>1만원 이상 <br> 요금제 셀프개통 시 <br> 3만원 혜택</p>
 						<a href="#" class="moer_btn" tabindex="139">자세히보기</a>
 					</div>
-					<ul class="fee_list">
-						<li class="fee_box fl">
-							<a href="#" tabindex="140">
-								<p class="fee_box_tit">LTE 유심 (10GB+/통화기본)</p>
-								<p class="fee_plus">10GB <span>다쓰면 최대 1Mbps</span></p>
-								<div class="fee_basic">
-									<p>통화 <span>기본제공</span></p>
-									<p>문자 <span>기본제공</span></p>
-								</div>
-								<div class="fee_tip_text">
-									추천으로 가입하면 추천인, 피추천인 모두 데이터 10GB를 24개월 동안 추가 증정!
-								</div>
-								<p class="fee_price"><strong>월 18,990원</strong><span>월 41,950원</span></p>
-							</a>
-						</li>
-						<li class="fee_box last fl">
-							<a href="#" tabindex="141">
-								<p class="fee_box_tit">LTE 유심 (13GB+/200분)</p>
-								<p class="fee_plus">13GB <span>다쓰면 최대 1Mbps</span></p>
-								<div class="fee_basic">
-									<p>통화 <span>200분</span></p>
-									<p>문자 <span>200건</span></p>
-								</div>
-								<div class="fee_tip_text">
-									1만원대 중 가장 많은 데이터 무제한! 할인된 가격으로 지금 가입하세요
-								</div>
-								<p class="fee_price"><strong>월 18,900원</strong><span>월 33,900원</span></p>
-							</a>
-						</li>
-					</ul>
-					<div class="next_btn"></div>
+					<div class="swiper fee_list02">
+						<ul class="fee_list swiper-wrapper">
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="140">
+									<p class="fee_box_tit">LTE 유심 (10GB+/통화기본)</p>
+									<p class="fee_plus">10GB <span>다쓰면 최대 1Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 10GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 18,990원</strong><span>월 41,950원</span></p>
+								</a>
+							</li>
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 (13GB+/200분)</p>
+									<p class="fee_plus">13GB <span>다쓰면 최대 1Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>200분</span></p>
+										<p>문자 <span>200건</span></p>
+									</div>
+									<div class="fee_tip_text">
+										1만원대 중 가장 많은 데이터 무제한! 할인된 가격으로 지금 가입하세요
+									</div>
+									<p class="fee_price"><strong>월 18,900원</strong><span>월 33,900원</span></p>
+								</a>
+							</li>
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+							<li class="fee_box last fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="swiper-button-prev prev_btn" onclick="return false"></div>
+					<div class="swiper-button-next next_btn" onclick="return false"></div>
 				</div>
-				<div class="fee_box_wrap">
+				<div class="fee_box_wrap fee03">
 					<div class="sec_title fee_cont_tit fee_tit_bg03 fl">
 						<h2>추천 가입 시 <br> 최대 +20GB</h2>
 						<p> 추천 가입하면 <br> 최대 +20GB <br>데이터 추가</p>
 						<a href="#" class="moer_btn" tabindex="139">자세히보기</a>
 					</div>
-					<ul class="fee_list">
-						<li class="fee_box fl">
-							<a href="#" tabindex="140">
-								<p class="fee_box_tit">LTE 유심 스페셜 플러스</p>
-								<p class="fee_plus">100GB <span>다쓰면 최대 5Mbps</span></p>
-								<div class="fee_basic">
-									<p>통화 <span>기본제공</span></p>
-									<p>문자 <span>기본제공</span></p>
-								</div>
-								<div class="fee_tip_text">
-									추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
-								</div>
-								<p class="fee_price"><strong>월 38,990원</strong><span>월 46,000원</span></p>
-							</a>
-						</li>
-						<li class="fee_box last fl">
-							<a href="#" tabindex="141">
-								<p class="fee_box_tit">LTE 유심 스페셜</p>
-								<p class="fee_plus">11GB+일2GB <span>다쓰면 최대 3Mbps</span></p>
-								<div class="fee_basic">
-									<p>통화 <span>기본제공</span></p>
-									<p>문자 <span>기본제공</span></p>
-								</div>
-								<div class="fee_tip_text">
-									추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
-								</div>
-								<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
-							</a>
-						</li>
-					</ul>
-					<div class="next_btn"></div>
+					<div class="swiper fee_list03">
+						<ul class="fee_list swiper-wrapper">
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="140">
+									<p class="fee_box_tit">LTE 유심 스페셜 플러스</p>
+									<p class="fee_plus">100GB <span>다쓰면 최대 5Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 38,990원</strong><span>월 46,000원</span></p>
+								</a>
+							</li>
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+							<li class="fee_box last fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="swiper-button-prev prev_btn" onclick="return false"></div>
+					<div class="swiper-button-next next_btn" onclick="return false"></div>
 				</div>
-				<div class="fee_box_wrap">
+				<div class="fee_box_wrap fee04">
 					<div class="sec_title fee_cont_tit fee_tit_bg04 fl">
 						<h2>BEST <br> 유심요금제</h2>
 						<p>1만원 이상 <br> 요금제 가입 시 <br> 3만원 혜택</p>
 						<a href="#" class="moer_btn" tabindex="139">자세히보기</a>
 					</div>
-					<ul class="fee_list">
-						<li class="fee_box fl">
-							<a href="#" tabindex="140">
-								<p class="fee_box_tit">LTE 유심 스페셜 플러스</p>
-								<p class="fee_plus">100GB <span>다쓰면 최대 5Mbps</span></p>
-								<div class="fee_basic">
-									<p>통화 <span>기본제공</span></p>
-									<p>문자 <span>기본제공</span></p>
-								</div>
-								<div class="fee_tip_text">
-									추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
-								</div>
-								<p class="fee_price"><strong>월 38,990원</strong><span>월 46,000원</span></p>
-							</a>
-						</li>
-						<li class="fee_box last fl">
-							<a href="#" tabindex="141">
-								<p class="fee_box_tit">LTE 유심 스페셜</p>
-								<p class="fee_plus">11GB+일2GB <span>다쓰면 최대 3Mbps</span></p>
-								<div class="fee_basic">
-									<p>통화 <span>기본제공</span></p>
-									<p>문자 <span>기본제공</span></p>
-								</div>
-								<div class="fee_tip_text">
-									추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
-								</div>
-								<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
-							</a>
-						</li>
-					</ul>
-					<div class="next_btn"></div>
+					<div class="swiper fee_list04">
+						<ul class="fee_list swiper-wrapper">
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="140">
+									<p class="fee_box_tit">LTE 유심 스페셜 플러스</p>
+									<p class="fee_plus">100GB <span>다쓰면 최대 5Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 38,990원</strong><span>월 46,000원</span></p>
+								</a>
+							</li>
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+							<li class="fee_box last fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="swiper-button-prev prev_btn" onclick="return false"></div>
+					<div class="swiper-button-next next_btn" onclick="return false"></div>
 				</div>
-				<div class="fee_box_wrap">
+				<div class="fee_box_wrap fee05">
 					<div class="sec_title fee_cont_tit fee_tit_bg05 fl">
 						<h2>BEST <br> 유심요금제</h2>
 						<p>1만원 이상 <br> 요금제 가입 시 <br> 3만원 혜택</p>
 						<a href="#" class="moer_btn" tabindex="139">자세히보기</a>
 					</div>
-					<ul class="fee_list">
-						<li class="fee_box fl">
-							<a href="#" tabindex="140">
-								<p class="fee_box_tit">LTE 유심 스페셜 플러스</p>
-								<p class="fee_plus">100GB <span>다쓰면 최대 5Mbps</span></p>
-								<div class="fee_basic">
-									<p>통화 <span>기본제공</span></p>
-									<p>문자 <span>기본제공</span></p>
-								</div>
-								<div class="fee_tip_text">
-									추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
-								</div>
-								<p class="fee_price"><strong>월 38,990원</strong><span>월 46,000원</span></p>
-							</a>
-						</li>
-						<li class="fee_box last fl">
-							<a href="#" tabindex="141">
-								<p class="fee_box_tit">LTE 유심 스페셜</p>
-								<p class="fee_plus">11GB+일2GB <span>다쓰면 최대 3Mbps</span></p>
-								<div class="fee_basic">
-									<p>통화 <span>기본제공</span></p>
-									<p>문자 <span>기본제공</span></p>
-								</div>
-								<div class="fee_tip_text">
-									추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
-								</div>
-								<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
-							</a>
-						</li>
-					</ul>
-					<div class="next_btn"></div>
+					<div class="swiper fee_list05">
+						<ul class="fee_list swiper-wrapper">
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="140">
+									<p class="fee_box_tit">LTE 유심 스페셜 플러스</p>
+									<p class="fee_plus">100GB <span>다쓰면 최대 5Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 38,990원</strong><span>월 46,000원</span></p>
+								</a>
+							</li>
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+							<li class="fee_box last fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="swiper-button-prev prev_btn" onclick="return false"></div>
+					<div class="swiper-button-next next_btn" onclick="return false"></div>
 				</div>
-				<div class="fee_box_wrap">
+				<div class="fee_box_wrap fee06">
 					<div class="sec_title fee_cont_tit fee_tit_bg06 fl">
 						<h2>BEST <br> 유심요금제</h2>
 						<p>1만원 이상 <br> 요금제 가입 시 <br> 3만원 혜택</p>
 						<a href="#" class="moer_btn" tabindex="139">자세히보기</a>
 					</div>
-					<ul class="fee_list">
-						<li class="fee_box fl">
-							<a href="#" tabindex="140">
-								<p class="fee_box_tit">LTE 유심 스페셜 플러스</p>
-								<p class="fee_plus">100GB <span>다쓰면 최대 5Mbps</span></p>
-								<div class="fee_basic">
-									<p>통화 <span>기본제공</span></p>
-									<p>문자 <span>기본제공</span></p>
-								</div>
-								<div class="fee_tip_text">
-									추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
-								</div>
-								<p class="fee_price"><strong>월 38,990원</strong><span>월 46,000원</span></p>
-							</a>
-						</li>
-						<li class="fee_box last fl">
-							<a href="#" tabindex="141">
-								<p class="fee_box_tit">LTE 유심 스페셜</p>
-								<p class="fee_plus">11GB+일2GB <span>다쓰면 최대 3Mbps</span></p>
-								<div class="fee_basic">
-									<p>통화 <span>기본제공</span></p>
-									<p>문자 <span>기본제공</span></p>
-								</div>
-								<div class="fee_tip_text">
-									추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
-								</div>
-								<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
-							</a>
-						</li>
-					</ul>
-					<div class="next_btn"></div>
+					<div class="swiper fee_list06">
+						<ul class="fee_list swiper-wrapper">
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="140">
+									<p class="fee_box_tit">LTE 유심 스페셜 플러스</p>
+									<p class="fee_plus">100GB <span>다쓰면 최대 5Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 38,990원</strong><span>월 46,000원</span></p>
+								</a>
+							</li>
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+							<li class="fee_box fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+							<li class="fee_box last fl swiper-slide">
+								<a href="#" tabindex="141">
+									<p class="fee_box_tit">LTE 유심 스페셜</p>
+									<p class="fee_plus">11GB+일2GB <span>다쓰먄 최대 3Mbps</span></p>
+									<div class="fee_basic">
+										<p>통화 <span>기본제공</span></p>
+										<p>문자 <span>기본제공</span></p>
+									</div>
+									<div class="fee_tip_text">
+										추천으로 가입하면 추천인, 피추천인 모두 데이터 20GB를 24개월 동안 추가 증정!
+									</div>
+									<p class="fee_price"><strong>월 33,000원</strong><span>월 49,390원</span></p>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="swiper-button-prev prev_btn" onclick="return false"></div>
+					<div class="swiper-button-next next_btn" onclick="return false"></div>
 				</div>
 			</div><!--fee_list-->
 		</div>
@@ -605,7 +834,7 @@
 			</div>
 		</div>
 	</section><!--inquiry-->
-	<%@ include file="./include/footer.jsp" %>
+	<%@ include file="include/footer.jsp" %>
 	<div class="pop_wrap">
 		<div id="pop">
 			<a href="#" class="pop_all_close" onclick="return false">전체 닫기</a>
@@ -638,6 +867,9 @@
 				</a>
 			</div>
 		</div>
+	</div>
+	<div class="top_btn">
+		<a href="#" onclick="return false"><img src="images/top_btn_icon_bk.png" alt="top 버튼" width="50" height="50"></a>
 	</div>
 </body>
 </html>
