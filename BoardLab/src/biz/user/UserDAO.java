@@ -11,11 +11,8 @@ public class UserDAO {
     private PreparedStatement stmt;
     private ResultSet rs;
 	
-    private static String USER_INSERT = 
-            "insert into users (id, password, name, role) "+ "values (?,?,?,?)";	
-
-    private static String USER_GET = 
-            "select * from users where id=? and password=?";	
+    private static String USER_INSERT = "insert into users (id, password, name, role) "+ "values (?,?,?,?)";
+    private static String USER_GET = "select * from users where id=? and password=?";	
     
     
     public void insertUser(UserVO vo) {
